@@ -29,7 +29,7 @@ class Board extends React.Component {
            isNxt: !this.state.isNxt
        })
     }
-       if(this.state.sqr[0]==this.state.sqr[1] && this.state.sqr[1]==this.state.sqr[2] &&  this.state.sqr[0]!==null &&this.state.sqr[2]!==null &&this.state.sqr[3]!==null ){
+       if(this.state.sqr[0]==this.state.sqr[1] && this.state.sqr[1]==this.state.sqr[2] &&  this.state.sqr[0]!==null &&this.state.sqr[2]!==null &&this.state.sqr[1]!==null  ){
            alert(this.state.sqr[0] + "player wins");
            //reset the board
        }
