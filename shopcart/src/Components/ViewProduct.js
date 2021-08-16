@@ -1,9 +1,4 @@
-// const ViewProduct = ()=>{
-// return(
-//     <h1>View product</h1>
-// )
-// }
-//import {React} from 'react';
+
 import React from "react";
 import PageTitle from '../Components/PageHeading'
 class ViewProduct extends React.Component{

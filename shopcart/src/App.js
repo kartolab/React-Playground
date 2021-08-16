@@ -1,11 +1,13 @@
-import ViewProduct from './Components/ViewProduct';
-import Header from './Components/header';
+
 import {BrowserRouter as Router,
 Route,
 Switch
 } from 'react-router-dom'
 import './App.css';
 
+import ViewProduct from './Components/ViewProduct';
+import Cart from './Components/Cart';
+import Header from './Components/header';
 
 function App() {
   return (
@@ -15,8 +17,8 @@ function App() {
       <Header/>
         <Route>
           <Switch>
-             <ViewProduct path="/" exact component={ViewProduct} />
-            
+            <ViewProduct path="/" exact component={ViewProduct} />
+            <Cart path="/cart" component={Cart} />
 
 
           </Switch>
