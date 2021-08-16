@@ -24,15 +24,31 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.header{
+  background-color: black;
+  height: 90px;
+}
+nav{
+  height: 100%;
+}
+nav ul{ 
+height:inherit;
+display:flex;
+align-items:center;
+width: 100%;
+justify-content:flex-end;
+list-style-type:none;
+margin-bottom: 0;
+
+}
+nav ul a {
+  color:#fff;
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav img {
+  width: 60px;
 }
