@@ -5,7 +5,7 @@
 // }
 //import {React} from 'react';
 import React from "react";
-
+import PageTitle from '../Components/PageHeading'
 class ViewProduct extends React.Component{
     constructor(props) {
         super(props)
@@ -28,7 +28,8 @@ class ViewProduct extends React.Component{
      //   const {productslist}=this.state;
         return(
             <div className="container" >
-               
+                <PageTitle heading="Products we have got " />
+              
                 <div className="row products-list-container">
                {this.state.items.map(item=>(
                    <div className="col-3 d-flex mb-4 product-item" key={item.id}>
