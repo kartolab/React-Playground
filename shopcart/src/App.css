@@ -52,3 +52,55 @@ nav ul a {
 nav img {
   width: 60px;
 }
+.product-item{
+  
+  padding: 15px;
+}
+.products-list-container img {
+  width: 120px;
+  height: 160px;
+  text-align: center;
+}
+.img-container{
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align: center;
+}
+.products-list-container{
+  margin-top:40px;
+}
+.products-list-container .card {
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+    min-height: 380px;
+
+}
+.align-btm{
+  margin-top: auto!important;
+}
+
+.btn-primary {
+  background: #222;
+    border: 1px solid #333;
+    height: 40px;
+    min-width: 80px;
+    padding: 0 20px;
+}
+.category{
+  text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    color: #717171;
+}
+.products-list-container .card-text{
+  height: 60px;
+  overflow: hidden;
+}
+
+.products-list-container .card-title{
+  min-height: 50px;
+  font-weight: 600;
+}
