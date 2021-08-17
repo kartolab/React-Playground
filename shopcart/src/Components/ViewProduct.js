@@ -1,13 +1,21 @@
 
 import React from "react";
-import PageTitle from '../Components/PageHeading'
+import PageTitle from '../Components/PageHeading';
+import Product  from "./Product";
+import Cart from "./Cart";
+
 class ViewProduct extends React.Component{
     constructor(props) {
         super(props)
         this.state ={
-            items:[]
+            items:[],
+            count:0,
+           cart:[]
         }
+        this.AddItemOnclick=this.AddItemOnclick.bind(this)
+      
     }
+   
     componentDidMount() {
         fetch('https://fakestoreapi.com/products')
             .then(data=>data.json())
@@ -15,30 +23,30 @@ class ViewProduct extends React.Component{
                 this.setState({
                     items:result
                 })
-                console.log(this.state.items)    
             })
        
+    }
+   
+
+    AddItemOnclick(product) {
+        this.setState(function(state) {
+            return {cart:state.cart.concat(product),count:state.count+1}
+            
+        })
+      this.props.setMyCart(this.state.count)
     }
     render(){
      //   const {productslist}=this.state;
         return(
             <div className="container" >
                 <PageTitle heading="Products we have got " />
-              
+                {/* <Cart addedProductList={this.state.cart}/> */}
+               
+               
                 <div className="row products-list-container">
+               
                {this.state.items.map(item=>(
-                   <div className="col-3 d-flex mb-4 product-item" key={item.id}>
-                       <div className="card">
-                           <div className="Card-body">
-                       <div className="category">{item.category}</div>
-                      <div className="img-container"> <img src={item.image}/></div>
-                       <div className="card-title">{item.title}</div>
-                       {/* <div className="card-text"> {item.description}</div> */}
-                       <div className="mb-2"><p>${item.price}</p></div>
-                       </div>
-                       <button className="btn-primary mt-3 align-btm">Add to cart</button>
-                   </div>
-                   </div>
+                   <Product key= {item.id} id={item.id} category={item.category} image={item.image} title={item.title} price={item.price} addItem={this.AddItemOnclick}/>
                ))}
                 </div>
             </div>

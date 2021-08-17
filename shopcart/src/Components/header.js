@@ -1,7 +1,8 @@
 import {Link} from 'react-router-dom';
 import Logo from '../Resources/logo.png';
+import Badge from './Badge';
 
-const Header=()=>{
+const Header=({myCart})=>{
     const logoStyle = {
     color: '#fff',
     textDecoration: 'none',
@@ -19,8 +20,9 @@ const Header=()=>{
     return(
     <div className="header">
           <nav  className="container-md navbar navbar-expand-lg ">
+         
                 <Link to="/" style={logoStyle}> <img src={Logo}/> <span>Shop me</span></Link>
-                <Link style={basketStyle} to="/cart" >&#128722;</Link>
+                <Link style={basketStyle} to="/cart" >&#128722;<Badge myCartCount={myCart}/></Link>
         </nav>
     </div>
     )
