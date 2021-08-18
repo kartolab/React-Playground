@@ -13,6 +13,7 @@ class ViewProduct extends React.Component{
            cart:[]
         }
         this.AddItemOnclick=this.AddItemOnclick.bind(this)
+    //    this.ViewProductDetails=this.ViewProductDetails.bind(this)
       
     }
    
@@ -28,19 +29,24 @@ class ViewProduct extends React.Component{
     }
    
 
+
     AddItemOnclick(product) {
+       
         this.setState(function(state) {
-            return {cart:state.cart.concat(product),count:state.count+1}
-            
+            const existingProduct = state.cart.filter(p=>p.id==product.id);   
+            return {cart:state.cart.concat(product),count:state.count+1}    
         })
-      this.props.setMyCart(this.state.count)
+      this.props.addedItemToCart(this.state.cart);
+      this.props.setMyCart(this.state.cart.length)
     }
     render(){
      //   const {productslist}=this.state;
         return(
             <div className="container" >
                 <PageTitle heading="Products we have got " />
-                {/* <Cart addedProductList={this.state.cart}/> */}
+               <h5>{
+                   this.state.cart.length
+                   }</h5>
                
                
                 <div className="row products-list-container">
