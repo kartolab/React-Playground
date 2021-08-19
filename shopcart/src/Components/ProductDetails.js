@@ -46,10 +46,10 @@ class ProductDetail extends React.Component {
             <div className="container mt-5">
 
                 <div className="row">
-                    <div className="col">
+                    <div className="col-md-6 col-sm-12 col-xs-12">
                         <img style={imgStyles} src={this.state.items.image} />
                     </div>
-                    <div className="col" >
+                    <div className="col-md-6 col-sm-12 col-xs-12" >
 
                         <div style={col2Styles}>
                             <h2 style={{ color: '#000', fontWeight: '100', fontSize: '36px' }}>{this.state.items.title}</h2>

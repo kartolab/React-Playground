@@ -14,7 +14,7 @@ const Header=({cartLength,itemsIncart})=>{
     const basketStyle={
         display:'flex',
         fontSize:'28px',
-        width:'87%',
+        width:'calc(100% - 200px)',
         justifyContent:'flex-end',
         color:'#fff'
     }
