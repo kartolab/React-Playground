@@ -3,7 +3,7 @@ import Logo from '../Resources/logo.png';
 import Badge from './Badge';
 import Cart from './Cart';
 
-const Header=({myCart,itemsIncart})=>{
+const Header=({cartLength,itemsIncart})=>{
     const logoStyle = {
     color: '#fff',
     textDecoration: 'none',
@@ -25,12 +25,7 @@ const Header=({myCart,itemsIncart})=>{
           <nav  className="container-md navbar navbar-expand-lg ">
             
                 <Link to="/" style={logoStyle}> <img src={Logo}/> <span>Shop me</span></Link>
-                <Link style={basketStyle} to={
-                    {     
-                        pathname: '/cart',
-                        state:itemsIncart
-                       }
-                } >&#128722;<Badge myCartCount={myCart}/></Link>
+                <Link itemsincart={itemsIncart}style={basketStyle} to= '/cart'>&#128722;<Badge myCartCount={cartLength}/></Link>
         </nav>
     </div>
     )

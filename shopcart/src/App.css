@@ -81,7 +81,14 @@ nav img {
 .align-btm{
   margin-top: auto!important;
 }
+.btn-success{
+  border: 1px solid green;
+  background-color: green;
+  height: 40px;
+  min-width: 80px;
+  padding: 0 20px;
 
+}
 .btn-primary {
   background: #222;
     border: 1px solid #333;
@@ -97,11 +104,27 @@ nav img {
     display: flex;
     color: #717171;
 }
+.cart-container h1{
+  width: 100%;
+}
 .products-list-container .card-text{
   height: 60px;
   overflow: hidden;
 }
+.w-100{
+  width: 100%;
+}
+.align-all-center{
+  align-items: center;
+  justify-content: center;
+}
+.icon-container:hover{
+  cursor: pointer;
+}
+.icon-container{
+padding: 8px 15px;
 
+}
 .products-list-container .card-title{
   min-height: 50px;
   font-weight: 600;
