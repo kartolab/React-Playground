@@ -27,7 +27,7 @@ const Cart = (props) => {
                 {props.itemsInCart.length == 0 ? <h4> No items in your Cart !! Epxlore products in home page</h4>
                     : <div className="w-100 d-flex  justify-content-end">
                         <Link to="/" style={{ textDecoration: 'none', marginRight: '20px' }}><button className="btn-primary"> Back</button></Link>
-                        <Link to="/" style={{ textDecoration: 'none' }} ><button className=" btn-success"> Place Order</button></Link>
+                        <Link to="/placeorder" style={{ textDecoration: 'none' }} ><button className=" btn-success"> Place Order</button></Link>
                     </div>}
 
             </div>
