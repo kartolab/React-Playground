@@ -19,7 +19,7 @@ const Cart = (props) => {
 
     }
 
-    var totalAmount = props.itemsInCart.reduce((a, v) => a + v.price, 0)
+    var totalAmount = props.itemsInCart.reduce((a, v) => a + v.price*v.unit, 0)
     return (
         <div className="container cart-container">
             <div className="d-flex  align-all-center ">
@@ -40,7 +40,8 @@ const Cart = (props) => {
                             <div className="w-100"><h5>{c.title}</h5><p style={{ marginBottom: '0' }}>{c.category}</p></div>
 
                             <div className=" cart-price-item">
-                                <p style={{ fontSize: '30px', marginRight: '30px', marginBottom: '0' }}>${c.price}</p>
+                                <p style={{ fontSize: '30px', marginRight: '30px', marginBottom: '0' }}>{c.unit} X ${c.price}</p>
+                                <p style={{ fontSize: '30px', marginRight: '30px', marginBottom: '0' }}>{c.unit*c.price}</p>
                                 <i onClick={() => HandleRemoveProductOnClick(c.id)} style={{ color: 'red', fontSize: '28px' }} className="icon-container fa fa-trash-o"></i>
                             </div>
                         </div>

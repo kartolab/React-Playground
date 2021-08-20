@@ -10,17 +10,26 @@ import ViewProduct from './Components/ViewProduct';
 import Cart from './Components/Cart';
 import Header from './Components/header';
 import PlaceOrder from './Components/PlaceOrder';
-import FilterSection from './Components/FilterSection';
 import { useEffect, useState } from 'react';
 
 function App() {
   
   //this use state is responsible for setting the cart items into the cart
   const [itemsInCart, SetItemsInCart] = useState([]);
-
+  const [cartLength,SetCartLength]=useState(0);
+ 
   const addToCart = (product) => {
+    //if product exist in cart increment unit +1
+    //check if product exist in cart
+    let checkIndx= itemsInCart.findIndex(item=>item.id===product.id)
+    SetCartLength(cartLength+1)
+    if(checkIndx!== -1) {
+      itemsInCart[checkIndx].unit++;
+    }else{
+    //else add item to cart
     SetItemsInCart([...itemsInCart, product])
-
+  }
+    alert("Item added successgully !!")
   }
   const removeFromCart = (productId) => {
     let copyOfCartItems = [...itemsInCart]
@@ -33,13 +42,13 @@ function App() {
     <div className="App">
 
       <Router>
-        <Header cartLength={itemsInCart.length} itemsIncart={itemsInCart} />
+        <Header cartLength={cartLength} itemsIncart={itemsInCart} />
         <Route>
           <Switch>
             <ViewProduct path="/" exact component={ViewProduct} addToCart={addToCart} />
             <ProductDetails path="/productdetails/:id" exact component={ProductDetails} addToCart={addToCart} />
             <Cart path="/cart" component={Cart} removeFromCart={removeFromCart} itemsInCart={itemsInCart}/>
-            <FilterSection />
+           
             <PlaceOrder path="/placeorder" component={PlaceOrder}/>
 
 

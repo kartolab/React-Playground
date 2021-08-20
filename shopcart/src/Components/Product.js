@@ -16,7 +16,7 @@ const Product =({id,category,image,title,price,addItem})=>{
     <div className="mb-2"><p>${price}</p></div>
     </div>
     
-    <button className="btn-primary mt-3 align-btm" onClick={()=>addItem({id,category,image,title,price})}>Add to Cart</button>
+    <button className="btn-primary mt-3 align-btm" onClick={()=>addItem({id,category,image,title,price,unit:1})}>Add to Cart</button>
 </div>
 </div>
 )
