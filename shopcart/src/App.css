@@ -170,3 +170,14 @@ border-radius: 5px;
     left: -30px;
     font-weight: 600;
 }
+
+@media screen and (min-width: 320px) {
+  .filter-items {
+    display: block;
+  }
+}
+@media screen and (min-width: 960px) {
+  .filter-items {
+    display: flex;
+  }
+}

@@ -9,7 +9,31 @@ class ViewProduct extends React.Component {
 
         super(props)
         this.existingFilteredList=[];
-        this.FiterProdArr=['men\'s clothing','jewelery'];
+        this.FiterProdArr = [
+            {   Id:1,
+                categoryname: 'men\'s clothing',
+                isChecked: false
+            }
+            ,
+            {
+                Id:2,
+                categoryname: 'jewelery',
+                isChecked: false
+            }
+            ,
+            {
+                Id:3,
+                categoryname: 'electronics',
+                isChecked: false
+            }
+            ,
+            {
+                Id:4,
+                categoryname: 'women\'s clothing',
+                isChecked: false
+            }
+
+        ];
         this.state = {
             items: []
         }
@@ -34,11 +58,19 @@ class ViewProduct extends React.Component {
 
     HandleFilterByCategory(category, e) {
 
+        this.FiterProdArr.forEach(function (val) {
+            if (category.Id == val.Id) {
+                category.isChecked = !category.isChecked
+            }
+            else {
+                val.isChecked = false
+            }
+        }, this)
         if (e.target.checked) {
-          
+
             let a = this.productLitTempArr;
-            a = a.filter(c => c.category == category);
-                this.setState({ items: a })     
+            a = a.filter(c => c.category == category.categoryname);
+            this.setState({ items: a })
         } else {
             this.setState({ items: this.productLitTempArr })
 
