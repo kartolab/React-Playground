@@ -14,7 +14,7 @@ class ProductDetail extends React.Component {
     }
 
     HandleAddProductItem(product) {
-        console.log(this.props.addToCart(product))
+            this.props.addToCart(product)
     }
 
     componentDidMount() {

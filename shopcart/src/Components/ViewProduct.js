@@ -2,15 +2,19 @@
 import React from "react";
 import PageTitle from '../Components/PageHeading';
 import Product from "./Product";
-import Cart from "./Cart";
+import FilterSection from "./FilterSection";
 
 class ViewProduct extends React.Component {
     constructor(props) {
+
         super(props)
+        this.productLitTempArr=[];
+        this.FiterProdArr=['men\'s clothing','jewelery'];
         this.state = {
             items: []
         }
         this.HandleAddProductItemOnClik = this.HandleAddProductItemOnClik.bind(this)
+        this.HandleFilterByCategory=this.HandleFilterByCategory.bind(this);
     }
 
     componentDidMount() {
@@ -20,12 +24,28 @@ class ViewProduct extends React.Component {
                 this.setState({
                     items: result
                 })
-            })
+                if (this.state.items.length !== 0) {
+                    this.productLitTempArr = this.state.items;
 
+                }
+            })
     }
 
 
+    HandleFilterByCategory(category, e) {
 
+        if (e.target.checked) {
+            let a = [...this.state.items]
+            a = this.state.items.filter(c => c.category == category);
+            console.log(a);
+            this.setState({ items: a })
+            
+        } else {
+            this.setState({ items: this.productLitTempArr })
+
+        }
+
+    }
 
     HandleAddProductItemOnClik(product) {
         //handle the add item click in product list
@@ -39,7 +59,7 @@ class ViewProduct extends React.Component {
         return (
             <div className="container" >
                 <PageTitle heading="Products we have got " />
-
+                    <FilterSection FiterProdArr={this.FiterProdArr} HandleFilterByCategory={this.HandleFilterByCategory}/>
                 <div className="row products-list-container">
 
                     {this.state.items.map(item => (

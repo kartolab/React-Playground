@@ -89,6 +89,14 @@ nav img {
   padding: 0 20px;
 
 }
+.filter-contiainer{
+  background-color: #aba;
+  padding: 0 10px;
+  padding-bottom: 8px;
+  padding-top: 5px;
+  border-radius: 5px;
+  
+}
 .btn-primary {
   background: #222;
     border: 1px solid #333;
@@ -103,6 +111,10 @@ nav img {
     width: 100%;
     display: flex;
     color: #717171;
+}
+.form-check-input{
+  height: 25px;
+  width: 3em!important;
 }
 .cart-container h1{
   width: 100%;
