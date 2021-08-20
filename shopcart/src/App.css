@@ -91,6 +91,7 @@ nav img {
 }
 .filter-contiainer{
   background-color: #aba;
+  display: flex;
   padding: 0 10px;
   padding-bottom: 8px;
   padding-top: 5px;

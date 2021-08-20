@@ -3,7 +3,7 @@
 const FilterSection = (props) => {
     return (
         <div className="text-start filter-contiainer">
-            <h6 style={{marginBottom:'0'}}>Filters</h6>
+            <h6 style={{marginBottom:'0',position:'relative',marginRight:'10px',top:'6px',textTransform:"uppercase",fontWeight:'500'}}>Filters</h6>
             <div className="d-flex ">
                 {props.FiterProdArr.map(c=>
                         <div className="form-switch" style={{marginRight:'15px'}}>

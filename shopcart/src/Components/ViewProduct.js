@@ -8,7 +8,7 @@ class ViewProduct extends React.Component {
     constructor(props) {
 
         super(props)
-        this.productLitTempArr=[];
+        this.existingFilteredList=[];
         this.FiterProdArr=['men\'s clothing','jewelery'];
         this.state = {
             items: []
@@ -35,11 +35,10 @@ class ViewProduct extends React.Component {
     HandleFilterByCategory(category, e) {
 
         if (e.target.checked) {
-            let a = [...this.state.items]
-            a = this.state.items.filter(c => c.category == category);
-            console.log(a);
-            this.setState({ items: a })
-            
+          
+            let a = this.productLitTempArr;
+            a = a.filter(c => c.category == category);
+                this.setState({ items: a })     
         } else {
             this.setState({ items: this.productLitTempArr })
 
